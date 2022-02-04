@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    background-color: #9999ff;
+    
+}
+
+#allContent{
+    max-width:100%;
+    margin:auto;
+}
+
+.text {
+    color: #dddddf;
+}
+
+.center {
+    text-align: center;
+}
+
+.small {
+    size:14px;
+}
+
+.medium {
+    size:20px;
+}
+
+.large {
+    size: 24px;
+}
+
+.veryLarge {
+    size:30px;
+}
+
+.subsection {
+    background-color: #7c7cd0;
+    font: bold;
+    width:calc(50% - 12px);
+    height:470px;
+    border-left-style:solid;
+    border-left-color:#dddddf;
+    border-right-style:solid;
+    border-right-color:#dddddf;
+    border-color:#dddddf;
+    border-style:solid;
+    border-width:6px;
+    float: left;
+}
+
+.topbar {
+    overflow:hidden;
+    background-color: rgb(56, 55, 55);
+    list-style-type: none;
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.barItem {
+    text-decoration: none;
+    color:azure;
+    float: left;
+    display: block;
+    padding: 16px 18px;
+    text-align: center;
+}
+
+.barItem:hover{
+    background-color: rgb(161, 160, 160);
+    color: black;
+}
+
+#interests {
+    margin-left: 10px;
+}
+
+.answer {
+    list-style-type: none;
+    margin: 0px 0px 0px 10px;
+}
+
+#mayAsWell {
+    margin: 0px 0px 0px 12px;
+}
+
+.secTitle {
+    margin: 10px 0px 0px 10px;
+}
+
+.FAQ {
+    margin: 2px 0px 2px 10px;
+}
+
+#allContent {
+    background-image:linear-gradient(to bottom, rgb(57, 49, 61), rgba(255, 255, 255, 0))
+}
+
+#HS {
+    margin-bottom: 30px;
+}
+
+#myName {
+    margin:0;
+}
+
+#webCeption{
+    width:100px;
+    height:100px;
+}
+
+#peashooter {
+    float: left;
+    width: 300px;
+    height: 300px;
+}
