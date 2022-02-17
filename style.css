@@ -7,6 +7,7 @@ body {
 #allContent{
     max-width:100%;
     margin:auto;
+    background-image:linear-gradient(to bottom, rgb(57, 49, 61), rgba(255, 255, 255, 0))
 }
 
 .text {
@@ -33,11 +34,28 @@ body {
     size:30px;
 }
 
+.section {
+    background-color: #7c7cd0;
+    font: bold;
+    width:99.5%;
+    border-left-style:solid;
+    border-left-color:#dddddf;
+    border-right-style:solid;
+    border-right-color:#dddddf;
+    border-color:#dddddf;
+    border-style:solid;
+    border-width:0.5%;
+    float: left;
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+}
+
 .subsection {
     background-color: #7c7cd0;
     font: bold;
     width:calc(50% - 12px);
-    height:470px;
+    height:520px;
     border-left-style:solid;
     border-left-color:#dddddf;
     border-right-style:solid;
@@ -92,25 +110,49 @@ body {
     margin: 2px 0px 2px 10px;
 }
 
-#allContent {
-    background-image:linear-gradient(to bottom, rgb(57, 49, 61), rgba(255, 255, 255, 0))
-}
-
-#HS {
+.subNote {
     margin-bottom: 30px;
 }
 
-#myName {
+.title {
     margin:0;
 }
 
-#webCeption{
-    width:100px;
-    height:100px;
-}
+/*misc*/
 
 #peashooter {
     float: left;
     width: 300px;
     height: 300px;
+}
+
+#master {
+    width:20%;
+    height:630px;
+}
+
+#archive {
+    width:79%;
+    height:630px;
+}
+
+/*Portfolio-specific*/
+
+.pfProjects {
+    margin:10px;
+    font-size: 44px;
+    float: center;
+    display: block;
+    text-decoration: none;
+    padding: 16px 18px;
+    color:#dddddf;
+}
+
+.pfProjects:hover {
+    background-color: #dbdbdb;
+    color: rgb(34, 34, 34);
+}
+
+#portfolio {
+    list-style-type: none;
 }
