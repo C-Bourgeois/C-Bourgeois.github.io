@@ -38,9 +38,9 @@
         
         // example: 
         createCollectable(type.steve, 200, 170, 6, 0.7);
-        
-        
-        
+        createCollectable(type.grace, 10, 100, 10, 0.82399);
+        createCollectable(type.max, game.world.width - 140, 30, 10, 0.82399);
+        createCollectable(type.db, game.world.width - 130, game.world.height - 250, 10, 0.82399);
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
     };
