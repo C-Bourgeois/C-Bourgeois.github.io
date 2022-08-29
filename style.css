@@ -89,6 +89,15 @@ body {
     color: black;
 }
 
+.button {
+    
+}
+
+.button:hover{
+    background-color: rgb(161, 160, 160);
+    color: black;
+}
+
 #interests {
     margin-left: 10px;
 }
@@ -119,6 +128,10 @@ body {
 }
 
 /*misc*/
+
+.textBackdrop{
+    background-color: rgba(158, 136, 238, 0.425);
+}
 
 #peashooter {
     float: left;
