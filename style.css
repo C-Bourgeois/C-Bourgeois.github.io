@@ -73,6 +73,8 @@ body {
     margin: 0;
     margin-bottom: 30px;
     padding: 0;
+    position: fixed;
+    width: 100%;
 }
 
 .barItem {
@@ -94,7 +96,7 @@ body {
 }
 
 .button:hover{
-    background-color: rgb(161, 160, 160);
+    background-color: rgb(134, 107, 151);
     color: black;
 }
 

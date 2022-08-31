@@ -3,6 +3,7 @@
     <head>
         <title>Carson's Portfolio</title>
         <link rel="stylesheet" href="style.css"> 
+        <script src="/projects/legend-tracker/calcTimes.js"></script>
         <!--Hope you dont mind I just used style.css for both. It made it quite a bit easier.-->
     </head>
 
@@ -12,7 +13,7 @@
                 <ul class="topbar">
                     <a class="barItem" href="index.html"><li>Home</li></a>
                     <a class="barItem" href="portfolio.html"><li>Portfolio</li></a>
-                    <a class="barItem" href="pixeltime.html"><li>Pixelmon Time Calc</li></a>
+                    <a class="barItem" href="pixeltime.html"><li>Pixel Time Calc</li></a>
                     <a class="barItem" href="https://www.youtube.com/watch?v=QtBDL8EiNZo"><li>Cat!</li></a>
                 </ul>
             </nav>
@@ -21,20 +22,18 @@
                     <h1 class="titleCard center veryLarge text">Legendary Spawn Tracker</h1>
                     <div class="section">
                         <h3 class="center text textBackdrop">Explanation:</h3>
-                        <p class="center text">Step 1: Press the "Begin" button below</p>
-                        <p class="center text">Step 2: Follow and the prompts in the provided box</p>
+                        <p class="center text">Step 1: Input most recent legend spawn in box</p>
+                        <p class="center text">Step 2: Press "Results" button</p>
                         <p class="center text">Step 3: Wait for results</p>
                     </div>
-                    <button onclick="calc()" id="beginPrompt" type="button" class="textBackdrop"><p class="veryLarge">Begin</p></button>
-                    <button onclick="calc()" id="startPrompt" type="button"><p class="veryLarge">Start</p></button>
-                    <script>
-                        function calc(){
-                            let curTime = prompt("Please enter the current time to the best of your abilities.", "XX:XX");
-                            let lastSpawn = prompt("When was the last time a legendary spawned?", "XX:XX");
-                            let curTimes = curTime.split(":");
-                            let lastSpawns = lastSpawn.split(":");
-                        }
-                    </script>
+                    <!-- <form>
+                        <div class="section">
+                            <label for="prevSpawn" class="center text">Most recent spawn:</label>
+                            <input id="prevSpawn" type="text" placeholder="XX:XX" class="masked" pattern="(1[0-2]|0[1-9])\/(1[5-9]|2\d)" data-valid-example="05/18">
+                        </div>
+                    </form> -->
+                    <button onclick="gather()" id="beginPrompt" type="button" class="textBackdrop button"><p class="veryLarge">Results</p></button>
+                    <script src="/projects/legend-tracker/calcTimes.js"></script>
                 </div>
             </main>
      </div>
