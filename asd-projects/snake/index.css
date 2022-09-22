@@ -1,0 +1,60 @@
+
+body {
+  background-color: darkgreen;
+}
+
+#board {
+  width: 440px;
+  height: 440px;
+  border: 10px solid white;
+  background-color: black;
+  position: relative;
+}
+
+#snakeHead {
+  background-color: darkgreen;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 200px;
+  top: 200px; 
+}
+
+.snake {
+  background-color: green;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
+#apple {
+  background-color:red;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
+.bomb {
+  background-color:darkslategray;
+  border: 2px dotted red;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  animation: spin 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin{
+  0%  {transform: rotate(0);}
+  100%  {transform: rotate(360deg);}
+}
+
+#scorekeep {
+  color: white;
+  font-size: xx-large;
+  font-weight: bold;
+  border: 10px solid white;
+  width: 440px;
+  margin-top: 10px;
+}
