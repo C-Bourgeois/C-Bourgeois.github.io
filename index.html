@@ -12,19 +12,22 @@
       <nav>
         <ul class="topbar">
           <a class="barItem" href="index.html"><li>Home</li></a>
-          <a class="barItem" href="portfolio.html"><li>Portfolio</li></a>
-          <a class="barItem" href="pixeltime.html"><li>Pixelmon Time Calc</li></a>
+          <div class="dropdown barItem">
+            <button class="dropbtn">Portfolios</button>
+            <a class="barItem" href="jsPortfolio.html"><li>JavaScript Portfolio</li></a>
+          </div>
+          <a class="barItem" href="pixeltime.html"><li>Pixel Time Calc</li></a>
           <a class="barItem" href="https://www.youtube.com/watch?v=QtBDL8EiNZo"><li>Cat!</li></a>
         </ul>
       </nav>
 
       <main>
         <!--content-->
-        <div>
+        <div id="mainContent">
           <div class="titleCard">
             <h2 class="title center veryLarge text">Carson Bourgeois</h2>
             <p class="subNote center medium text">
-              High school student at Lusher Charter School
+              High school student at The Willow Charter School
             </p>
           </div>
           <!--interests-->
@@ -36,39 +39,40 @@
                 <li>Risk of Rain 2</li>
                 <li>Hades</li>
                 <li>Minecraft</li>
+                <li>(I guess mastermind if we're talking web games)</li>
 
                 <h4>Favorite Food Types:</h4>
                 <li>Japanese</li>
                 <li>Mexican</li>
                 <li>Indian</li>
 
-                <h4>Favorite Classes:</h4>
-                <li>AP Computer Science Principles</li>
-                <li>Biology</li>
-                <li>AP Environmental Science</li>
+                <h4>Favorite Classes This Year:</h4>
+                <li>AP English Literature</li>
+                <li>AP Biology</li>
+                <li>AP Gov</li>
+
                 <h4>Favorite Peashooter:</h4>
                 <li>I love him. I love the peashooter.</li>
               </ul>
             </div>
-            <!--About Me-->
-            <div class="subsection" id="AboutMe">
-              <h3 class="text secTitle" id="FAQ">Frequently Asked Questions</h3>
+            <!--About Me (FAQ)-->
+            <div class="subsection" id="FAQ">
+              <h3 class="text secTitle">Frequently Asked Questions</h3>
               <h5 id="mayAsWell">(may as well get these out of the way)</h5>
               <ul class="text FAQ">
                 <li><h4>Where do I want to be in 4 years?</h4></li>
                 <li class="answer">
-                  Hopefully completing college at Georgia Tech, UC Berkeley, UC
-                  San Diego, or another school I like.
+                  Hopefully completing college at a school I like.
                 </li>
                 <li><h4>What do I want a degree in?</h4></li>
                 <li class="answer">
-                  I'd like a degree in cybersecurity, whatever that may end up
-                  being.
+                  I'd like a degree in cybersecurity, which will most likely mean a degree in
+                  computer science followed by some other method of study (such as the certs)
+                  for cybersecurity.
                 </li>
                 <li><h4>What are some things I would like to learn?</h4></li>
                 <li class="answer">
-                  I would like to learn to create automation scripts in JS and
-                  piano.
+                  I would like to learn to create TensorFlow models and Piano.
                 </li>
                 <li>
                   <h4>
@@ -76,15 +80,12 @@
                   </h4>
                 </li>
                 <li class="answer">
-                  Smart, Funny, and Chaotic. They do always place me Chaotic
-                  Neutral on the DnD alignment chart...
+                  Smart, curious, and funny. They used to place me as chaotic neutral, but now
+                  they're leaning more towards lawful evil. Moving up in the world?
                 </li>
                 <li><h4>Why did you join Operation Spark?</h4></li>
                 <li class="answer">
-                  I figure someone in cybersecurity should have a good handle on
-                  the many different aspects of computers. Also, it wouldnt hurt
-                  to have a nice job in college and something to put on an
-                  application.
+                  I hope to gain a better general understanding of a wide variety of programming concepts.
                 </li>
               </ul>
             </div>

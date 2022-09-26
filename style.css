@@ -6,8 +6,12 @@ body {
 
 #allContent{
     max-width:100%;
-    margin:auto;
+    margin: 0px;
     background-image:linear-gradient(to bottom, rgb(57, 49, 61), rgba(255, 255, 255, 0))
+}
+
+.titleCard {
+    padding-top: 60px;
 }
 
 .text {
@@ -46,7 +50,6 @@ body {
     border-style:solid;
     border-width:0.5%;
     float: left;
-    margin: 0;
     padding: 0;
     overflow:hidden;
 }
@@ -71,9 +74,8 @@ body {
     background-color: rgb(56, 55, 55);
     list-style-type: none;
     margin: 0;
-    margin-bottom: 30px;
     padding: 0;
-    position: fixed;
+    position: fixed; 
     width: 100%;
 }
 
@@ -100,8 +102,12 @@ body {
     color: black;
 }
 
+#FAQ {
+    border-left: 3px;
+}
+
 #interests {
-    margin-left: 10px;
+    border-right: 3px;
 }
 
 .answer {
@@ -115,10 +121,6 @@ body {
 
 .secTitle {
     margin: 10px 0px 0px 10px;
-}
-
-.FAQ {
-    margin: 2px 0px 2px 10px;
 }
 
 .subNote {

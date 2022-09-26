@@ -199,7 +199,7 @@ function runProgram(){
       repositionApple();
       redrawApple();
       score += 1;
-      snakeList.grow()
+      snakeList.grow();
     }
 
     ////////////////////////////////////////////////////////////////////////
