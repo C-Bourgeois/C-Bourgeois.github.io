@@ -4,6 +4,8 @@ $(document).ready(function() {
     $.getJSON('data.json', function (data) {
         // YOUR CODE BELOW HERE //
 
+        //$('#section-bio').
+        
         // uncomment this to inspect all available data; delete when done //
 
         // EXAMPLE: Looping over top rated recordings; replace with your code //
