@@ -1,0 +1,105 @@
+User Story / Gameplay
+
+- Describe the gameplay
+    A ball will be released onto the field in a random direction each round, and the direction can only be changed by hitting a paddle or wall. The paddles are controlled by a user(s) using
+    "W" and "S" keys for the left paddle, and up arrow and down arrow for the right paddle. The speed of the ball will reverse on the X axis if a paddle is hit and a Y axis if a 
+    wall is hit. When the ball's center touches the left or right boundary, a point is awarded to the corresponding opposing side to be added to the score.
+- What are the conditions when the game begins?
+     The left paddle is situated on the center of the Y axis but nearly the leftmost of the X axis (low). The right paddle is situated on the center of the Y axis but the rightmost
+     of the X axis (high). The score is 0 by default. The ball will be launched in a random direction from the center of the entire board.
+- Does the game have an end? If so, what are the conditions for when it ends?
+    The game will end when either side reaches 7 points, so long as they are greater than 2 points ahead of the other side.
+- What ifs will there be?
+    (On point gain)
+    if scorer's score is greater than 7 AND scorer's score is not equal to right's score + 1 AND scorer's score is not equal to left's score + 1,
+        THEN end game and declare scorer wins
+        ELSE declare scorer scored for 3 seconds 
+             reset game board
+    
+    if ball hits a paddle,
+        THEN reverse direction of X axis speed
+             randomly add or subtract 5 X axis speed
+             randomly add or subtract 5 Y axis speed
+
+    if ball hits an upper or lower wall boundary,
+        THEN reverse direction of Y axis speed
+             randomly add or subtract 5 X axis speed
+             randomly add or subtract 5 Y axis speed
+
+    if ball hits a left or right board boundary,
+        if X axis speed is negative,
+            THEN add one point to right's score
+        ELSE, add one point to left's score
+        Update point display
+
+
+Visual Game Components:
+
+- What are the visual game components? For example, in Bouncing Box, the game components were the board and the box.
+    The board, the ball, and each paddle (leftPaddle and rightPaddle). 
+- Which will be static? (the board)
+    The Board will be static.
+- Which will be animated? (the box)
+    The Ball and the paddles.
+- What data will you need to manage each game component? For example, in Bouncing Box, the data values were positionX, speedX, and points.
+    Ball - [
+        positionX
+        positionY
+        speedX
+        speedY
+    ]
+    Board - [
+        leftScore
+        rightScore
+    ]
+    Paddles - [
+        positionY
+        speedY
+    ]
+
+
+Events / Logic
+
+- What events will occur in this game? (timer events, keyboard events, clicking events?)
+    Keydown events for the W, S, up arrow, and down arrow keys.
+    Timer events after scores.
+    Keyup events for the W, S, up arrow, down arrow, and space bar keys.
+- How do those events affect the data of the program?
+    The W, S, up arrow, and down arrow keydown events will increase the speed of the paddles, which will in turn affect the positioning of the paddles.
+    The W, S, up arrow, and down arrow keydown events will set paddle speedY to 0, depending on which is pressed.
+    The timer event will destroy an element and all children after 3 seconds and resume the game.
+    The spacebar keydown event will begin the game, which will create the ball element and apply speed.
+- For each "event", write out the high-level logic of what will happen. It is better (and tricky) to be as specific as you can while remaining high-level!
+    When the "W" key is pressed, 
+        -> The upward (Y axis) speed of the left paddle is set to negative, which moves up
+    
+    When the "W" key is released,
+        -> The upward (Y axis) speed of the left paddle is set to 0, which stops the paddle
+
+    When the "S" key is pressed,
+        -> The upward (Y axis) speed of the left paddle is set to positive, which moves down
+
+    When the "S" key is released,
+        -> The upward (Y axis) speed of the left paddle is set to 0, which stops the paddle
+
+    When the up arrow key is pressed,
+        -> The upward (Y axis) speed of the right paddle is set to negative, which moves up
+
+    When the up arrow key is released,
+        -> The upward (Y axis) speed of the right paddle is set to 0, which stops the paddle
+
+    When the down arrow key is pressed,
+        -> The upward (Y axis) speed of the right paddle is set to negative, which moves down
+
+    When the down arrow key is released,
+        -> The upward (Y axis) speed of the right paddle is set to 0, which stops the paddle
+
+    When the timer runs out, 
+        -> Text displaying which side scored a point will disappear
+        -> Positions of ball and paddles will be reset to where they were when the game began
+        -> Ball will begin to move in a random direction again
+
+    (Only available before the game has begun)
+    When the spacebar key is released,
+        -> Remove "Press spacebar to begin" text
+        -> cal begin game function
