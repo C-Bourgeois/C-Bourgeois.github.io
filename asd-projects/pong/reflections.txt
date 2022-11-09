@@ -48,7 +48,8 @@ Visual Game Components:
         speedX
         speedY
     ]
-    Board - [
+    Board
+    scoreBoard - [
         leftScore
         rightScore
     ]
@@ -102,4 +103,4 @@ Events / Logic
     (Only available before the game has begun)
     When the spacebar key is released,
         -> Remove "Press spacebar to begin" text
-        -> cal begin game function
+        -> call begin game function
