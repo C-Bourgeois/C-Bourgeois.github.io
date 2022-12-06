@@ -29,7 +29,7 @@ function runProgram(){
 
 
   // Other Variables
-  var activeGame = false;
+  var activeGame = false; //activeGame is used to determine if there is or isn't a game in progress. This will change the behavior of events and various functions.
 
   // Game Item Objects
 
@@ -144,13 +144,16 @@ function runProgram(){
         handleScore(Lpaddle, Rpaddle);
       }
     }
+    //Checks if ball has hit a wall
     if(ball.y <= 0 || ball.y >= 390){
       ball.spdY = ball.spdY * -1;
     }
     if(ball.x == 760) {ball.spdX = ball.spdX * -1}
+    //Checks if ball has hit paddle
     if(Lpaddle.y-30 <= ball.y && Lpaddle.y+156 >= ball.y && ball.x <= (70 - (ball.spdX)) && ball.x >= (70 + (ball.spdX))) {ball.spdX = ball.spdX * -1}
     if(Rpaddle.y-30 <= ball.y && Rpaddle.y+156 >= ball.y && ball.x <= (760 + (ball.spdX)) && ball.x >= (760 - (ball.spdX))) {ball.spdX = ball.spdX * -1}
-
+    
+    //Checks if Left paddle has hit a wall
     switch(true){
       case (Lpaddle.y < 0):
         Lpaddle.spdY = 0;
@@ -161,25 +164,20 @@ function runProgram(){
         Lpaddle.y = 314;
         break;
     }
+    //Checks if Right paddle has hit a wall
     switch(true){
       case (Rpaddle.y < 0):
         Rpaddle.spdY = 0;
         Rpaddle.y = 0;
         break;
-
       case (Rpaddle.y > 314):
         Rpaddle.spdY = 0;
         Rpaddle.y = 314;
         break;
     }
-    if(Lpaddle.y < 0 || Lpaddle.y > 314){
-      Lpaddle.spdY = 0;
-      Lpaddle
-    }
-    if(Rpaddle.y <= 0 || Rpaddle.y >= 314){
-      Rpaddle.spdY = Rpaddle.spdY * -1}
   }
 
+  //Updates the location values of all items on the field at once
   function repositionItems(){
     Lpaddle.y += Lpaddle.spdY;
     Rpaddle.y += Rpaddle.spdY;
@@ -187,27 +185,28 @@ function runProgram(){
     ball.y += ball.spdY;
   }
 
+  //"Physically" repositions all items on the field at once using forEach loops because I'm both lazy and curious
   function redrawItems(){
     var itemArray = [Lpaddle, Rpaddle, ball];
     itemArray.forEach(item => {item.element.css("top", item.y)});
     itemArray.forEach(item => {item.element.css("left", item.x)});
   }
-
+  //Updates score 
   function handleScore(scorer, scoree){
     $("#scoreBoard").text(Lpaddle.pts + " : " + Rpaddle.pts);
     $("#alert").text(scorer.name + " SCORED!").fadeIn(1000, resetBoard());
-    if(scorer.pts > 6 && scorer.pts > (scoree.pts + 1)){endGame(scorer.name)}
+    if(scorer.pts > 6 && scorer.pts > (scoree.pts + 1)){endGame(scorer.name)} //Determines if a player has just scored at least 7 goals AND is two points ahead of their opponent, then ends the game if so
     else{beginRound()}
   }
 
   //Moves the ball, beginning a new round
   function beginRound(){
     $("#alert").fadeOut(1000, redrawItems);
-    ball.spdX = (Math.random() * 2 + 3) * (Math.random() > 0.5 ? -1 : 1);
-    ball.spdY = (Math.random() * 2 + 3) * (Math.random() > 0.5 ? -1 : 1);
+    ball.spdX = (Math.random() * 2 + 3) * (Math.random() > 0.5 ? -1 : 1); //pfft, who even knows what this is?
+    ball.spdY = (Math.random() * 2 + 3) * (Math.random() > 0.5 ? -1 : 1); //Kidding. These two lines determine a random speed (and thus direction) for the ball to move at on spawn
   }
 
-  // resets the boards and each piece back to default positions
+  //Resets the boards and each piece back to default positions
   function resetBoard(){
     ball = ballDefaults;
     ball.y = 195;
@@ -222,6 +221,7 @@ function runProgram(){
   function endGame(victor) {
     // declare winner
     $("#alert").text(victor + " WON!");
+    activeGame = false;
     // stop the interval timer
     clearInterval(interval);
 
